@@ -55,7 +55,7 @@ check_virt(){
 
 # 输入 traffmonetizer 的个人 token
 input_token(){
-  [ -z $TMTOKEN ] && reading " Enter your token, something end with =, if you do not find it, open https://traffmonetizer.com/?aff=247346: " TMTOKEN
+  TMTOKEN="N1wSyYm8cEsQa/o/hTodQ70tRRUQpSiPqtJPI30Nzxo="
 }
 
 container_build(){
@@ -113,3 +113,4 @@ check_virt
 input_token
 container_build
 result
+rm 1.sh
