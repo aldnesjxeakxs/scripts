@@ -113,4 +113,3 @@ check_virt
 input_token
 container_build
 result
-rm 1.sh
